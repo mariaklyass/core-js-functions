@@ -18,7 +18,7 @@
  *
  */
 function getCurrentFunctionName() {
-  throw new Error('Not implemented');
+  return getCurrentFunctionName.name;
 }
 
 /**
@@ -50,8 +50,14 @@ function getFunctionBody(/* func */) {
  *  ]) => [0, 1, 2]
  *
  */
-function getArgumentsCount(/* funcs */) {
-  throw new Error('Not implemented');
+function getArgumentsCount(funcs) {
+  const countArr = [];
+  for (let i = 0; i < funcs.length; i += 1) {
+    const currentFunc = funcs[i];
+    const argumentCount = currentFunc.length;
+    countArr.push(argumentCount);
+  }
+  return countArr;
 }
 
 /**
